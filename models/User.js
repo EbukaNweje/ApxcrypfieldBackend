@@ -73,6 +73,10 @@ const UserSchema = new mongoose.Schema({
     default: 0.00
   },
 
+  otp: {
+    type: String,
+  },
+
   
 totalDeposit: {
     type: String,
