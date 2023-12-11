@@ -311,13 +311,6 @@ exports.login = async (req, res, next)=>{
 exports.restLink = async (req, res, next) => {
     try{
       const id = req.params.id
-      const token = req.params.token
-     
-    jwt.verify(token, process.env.JWT, async (err) => {
-      if (err) {
-        return next(createError(403, "Token not valid"));
-      }
-    });
     const userpaassword = await User.findById(id)
     const salt = bcrypt.genSaltSync(10);
     const hash = bcrypt.hashSync(req.body.password, salt)
