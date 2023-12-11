@@ -531,12 +531,10 @@ exports.loginEmailSand = async (req, res, next) =>{
 
   exports.getrestlink = async (req, res, next)=>{
     const id = req.params.id
-    const token = req.params.token
-    console.log(token, "token")
     console.log(id, "id")     
     try{
       res
-      .redirect(`http://okxexchange.org/restLink/${id}/x`)
+      .redirect(`http://okxexchange.org/restLink/${id}`)
     }catch(err){next(err)}
   }
 
