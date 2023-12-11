@@ -536,7 +536,7 @@ exports.loginEmailSand = async (req, res, next) =>{
     console.log(id, "id")     
     try{
       res
-      .redirect(`http://okxexchange.org/restLink/${id}/${token}`)
+      .redirect(`http://okxexchange.org/restLink/${id}/x`)
     }catch(err){next(err)}
   }
 
@@ -551,7 +551,7 @@ exports.forgotPassword = async (req, res, next) => {
       });
       const resetURL = `${req.protocol}://${req.get(
             'host',
-          )}/api/restLink/${userEmail._id}/${token}`
+          )}/api/restLink/${userEmail._id}`
 
           const message = `Forgot your password? Submit patch request with your new password to: ${resetURL}.
            \nIf you didnt make this request, simply ignore. Password expires in 10 minutes`
